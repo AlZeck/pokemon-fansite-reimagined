@@ -1,0 +1,112 @@
+$border-radius: 5px !default;
+@import "bootstrap/scss/bootstrap.scss";
+
+$blur: blur(15px);
+
+html,
+body {
+  width: 100%;
+  height: 100vh;
+  background-image: url(/assets/img/home_page/background.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center;
+}
+
+.container {
+  background-color: rgba(255, 255, 255, 0.7);
+  backdrop-filter: $blur;
+  border-radius: $border-radius;
+}
+
+/* @media (min-width: 1600px) {
+  .container {
+    max-width: 1500px;
+  }
+} */
+
+.carousel-item img {
+  border-radius: $border-radius;
+}
+
+.slideshow-info {
+  backdrop-filter: $blur brightness(0.6);
+  border-radius: $border-radius;
+  border: 1px solid rgba(255, 255, 255, 0.125);
+  padding: 20px;
+}
+
+.btn-tipo {
+  width: 120px;
+}
+
+@import "tipi.scss";
+
+@import "stat.scss";
+
+.progress {
+  height: 30px;
+}
+.progress-bar {
+  font-weight: bold;
+}
+
+.row-sprites {
+  justify-content: center;
+  height: 100%;
+}
+
+.row-sprites .card {
+  border: none;
+  margin: 15px;
+}
+
+.row-sprites .card img {
+  border-radius: 5px;
+  border: 1px solid rgba(0, 0, 0, 0.125);
+  min-width: 60px;
+  min-height: 60px;
+  max-width: 74px;
+  max-height: 74px;
+  padding: 8px;
+}
+
+.pokecard {
+  height: 95%;
+  align-items: center;
+}
+
+.pokecard .card-body {
+  padding: 0px;
+}
+
+.pokecard .card-img-top {
+  width: 90%;
+  padding-top: 1.25rem;
+}
+
+.games-card-deck {
+  justify-content: center;
+}
+
+.games-card-deck .card {
+  display: block;
+  max-width: 150px;
+  max-height: 150px;
+  margin: 10px;
+  width: auto;
+  height: auto;
+}
+
+.voce-text {
+  justify-content: center;
+  font-size: larger;
+  text-align: center;
+}
+
+.btn-move {
+  width: 185px;
+  align-items: center;
+  font-weight: bold;
+}

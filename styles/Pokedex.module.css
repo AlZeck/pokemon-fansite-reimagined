@@ -1,0 +1,36 @@
+.number {
+    color: gray;
+    text-align: left;
+}
+
+.cardDeck {
+    flex-flow: row wrap;
+    justify-content: center;
+}
+
+.card {
+    background-color: rgba(255, 255, 255, 0.7);
+    height: 182px;
+    width: 182px;
+    justify-content: center;
+}
+
+.card:hover {
+    background-color: white;
+    height: 182px;
+    width: 182px;
+    justify-content: center;
+}
+
+.cardTitle {
+    font-size: 17px;
+}
+
+.cardBody {
+    text-align: center;
+}
+
+
+.cardLink:hover {
+    text-decoration: none;
+}

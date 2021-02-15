@@ -12,7 +12,7 @@ export default function Home() {
       </Head>
       <NavBarPk />
 
-      <Container className="my-4">
+      <Container className="my-4 p-4">
         {/* Descrizione */}
         {/* Slideshow A.K.A. Carousel*/}
         <Carousel>

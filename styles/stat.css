@@ -1,0 +1,31 @@
+.stat-label{
+    text-align: center;
+    justify-content: center;
+    font-weight: bold;
+    min-width: 80px;
+    max-width: 80px;
+}
+
+.bar-stat-ps{
+    background-color: #58E810; 
+}
+
+.bar-stat-att{
+    background-color: #EACA2F; 
+}
+
+.bar-stat-dif{
+    background-color: #E5721D; 
+}
+
+.bar-stat-attsp{
+    background-color: #26BAE0; 
+}
+
+.bar-stat-difsp{
+    background-color: #4C6CD4; 
+}
+
+.bar-stat-vel{
+    background-color: #D425CE; 
+}

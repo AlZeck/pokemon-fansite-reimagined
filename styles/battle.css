@@ -1,0 +1,105 @@
+body {
+    width: 100%;
+    background-image: url(/assets/img/sfondi_battaglia/stadium.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+}
+
+.btn {
+    border-radius: 5px;
+}
+
+.btn-tipo {
+    width: 100%;
+    cursor: default;
+}
+
+.btn-group {
+    width: 100%;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.container-fluid {
+    color: white;
+    background-color: transparent;
+    justify-content: center;
+    padding-bottom: 20px;
+}
+
+.card-info {
+    height: 100%;
+}
+
+.card {
+    color: black;
+    background-color: rgba(255, 255, 255, 0.8);
+}
+
+.card-infopoke {
+    background-color: rgba(255, 255, 255, 0.9);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 2px solid rgba(0,0,0,0.368);
+}
+
+.battle {
+    height: 331px;
+    background-image: url(/assets/img/sfondi_battaglia/arena.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    background-color: #31bc9f;
+}
+
+.card-stat .row {
+    margin-bottom: 10px;
+    margin-top: 10px;
+}
+
+.battle-card-body {
+    align-self: center;
+    width: 575px;
+}
+
+.card-deck .card {
+    margin: 15px;
+}
+
+.active-mossa {
+    min-width: 300px;
+    flex-direction: row!important;
+}
+
+.card-mossa {
+    min-width: 140px;
+    cursor: default;
+}
+
+.pkavv {
+    padding-top: 10px;
+}
+
+.pkprt {
+    padding-top: 70px;
+}
+
+.progress {
+    height: 25px;
+}
+
+.card-infopoke .progress {
+    border: 1px solid rgba(0,0,0,0.24);
+}
+
+.infopoke-label {
+    min-width: 50px;
+    text-align: center;
+}
+
+.pokelis {
+    padding: 8px;
+    cursor: pointer;
+}

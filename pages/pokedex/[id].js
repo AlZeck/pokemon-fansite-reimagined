@@ -94,7 +94,7 @@ export default function Pokemon({ pokemon }) {
             </ButtonToolbar>
 
             <Card className="my-4">
-              <Stats pokemon={pokemon} />
+              <Stats info={pokemon} type="Pokemon" />
             </Card>
           </Col>
           <Col sm={4}>

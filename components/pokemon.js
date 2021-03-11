@@ -1,40 +1,45 @@
-import { Card, Row, Col, Nav, Tab } from "react-bootstrap";
+import Image from "next/image";
+import { CardDeck, Card, Row, Col, Nav, Tab } from "react-bootstrap";
 import { capitalize } from "../util/stringUtils";
 
 function Stats(props) {
-  const stats = ["ps", "att", "dif", "attsp", "difsp", "vel"];
-
+  var stats = ["potenza", "precisione"];
+  var max = 250;
+  var dim = 4;
+  if (props.type === "Pokemon") {
+    stats = ["ps", "att", "dif", "attsp", "difsp", "vel"];
+    max = 270;
+    dim = 2;
+  }
   return (
-    <Card>
-      <Card.Body>
-        <Card.Title> Statistiche </Card.Title>
-        {stats.map((stat) => {
-          const val = props.pokemon[stat];
-          const per = (val * 100) / 270;
-          return (
-            <Row className="py-2">
-              <Col sm={2} className="stat-label">
-                {capitalize(stat)}
-              </Col>
-              <Col>
-                <div className="progress justify-content-between">
-                  <div
-                    className={`progress-bar bar-stat-${stat}`}
-                    role="progressbar"
-                    aria-valuenow={`${per}`}
-                    aria-valuemin="0"
-                    aria-valuemax="270"
-                    style={{ width: `${per}%` }}
-                  >
-                    {` ${val} `}
-                  </div>
+    <Card.Body>
+      <Card.Title> Statistiche </Card.Title>
+      {stats.map((stat) => {
+        const val = props.info[stat];
+        const per = (val * 100) / max;
+        return (
+          <Row className="py-2">
+            <Col sm={dim} className="stat-label">
+              {capitalize(stat)}
+            </Col>
+            <Col>
+              <div className="progress justify-content-between">
+                <div
+                  className={`progress-bar bar-stat-${stat}`}
+                  role="progressbar"
+                  aria-valuenow={`${per}`}
+                  aria-valuemin="0"
+                  aria-valuemax={`${max}`}
+                  style={{ width: `${per}%` }}
+                >
+                  {` ${val} `}
                 </div>
-              </Col>
-            </Row>
-          );
-        })}
-      </Card.Body>
-    </Card>
+              </div>
+            </Col>
+          </Row>
+        );
+      })}
+    </Card.Body>
   );
 }
 
@@ -149,4 +154,65 @@ const colors = {
   fisico: "#82150B",
 };
 
-export { BtnTipo, Stats, PokeCard, VociPokedex, colors };
+function PokemonsDex(props) {
+  return (
+    <div className="mb-4">
+      <a
+        href={`/pokedex/${props.pokemon.nome}`}
+        className={`pokedex-card ${props.transparent ? "transparent" : ""}`}
+      >
+        <Card>
+          <Card.Body>
+            <Card.Title>
+              <span className="number"> #{props.pokemon.id} </span>
+              {" " + capitalize(props.pokemon.nome)}
+            </Card.Title>
+            <Image
+              src={`/assets/pokemon/artwork/${props.pokemon.nome}.png`}
+              alt={props.pokemon.nome}
+              width={110}
+              height={110}
+            />
+          </Card.Body>
+        </Card>
+      </a>
+    </div>
+  );
+}
+
+function EfficacyTypes(props) {
+  return (
+    <>
+      <strong> {props.title} </strong>
+      <CardDeck className="justify-content-center">
+        {props.types.map((type) => (
+          <a
+            className={`btn btn-tipo ${type} btn-move m-2`}
+            href={`/typedex/${type}`}
+          >
+            {capitalize(type)}
+          </a>
+        ))}
+      </CardDeck>
+    </>
+  );
+}
+
+function Efficacy(props) {
+  return (
+    <Card className="h-100 text-center">
+      <Card.Header>
+        <Card.Title>{props.title}</Card.Title>
+      </Card.Header>
+      <Card.Body>
+        <EfficacyTypes title="Superefficace" types={props.eff.superefficace} />
+        <hr />
+        <EfficacyTypes title="Poco Efficace" types={props.eff.poco_efficace} />
+        <hr />
+        <EfficacyTypes title="Inefficace" types={props.eff.inefficace} />
+      </Card.Body>
+    </Card>
+  );
+}
+
+export { BtnTipo, Stats, PokeCard, VociPokedex, colors, PokemonsDex, Efficacy };

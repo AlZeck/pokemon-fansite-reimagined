@@ -1,31 +1,39 @@
-.stat-label{
-    text-align: center;
-    justify-content: center;
-    font-weight: bold;
-    min-width: 80px;
-    max-width: 80px;
+.stat-label {
+  text-align: center;
+  justify-content: center;
+  font-weight: bold;
+  min-width: 80px;
+  max-width: 120px;
 }
 
-.bar-stat-ps{
-    background-color: #58E810; 
+.bar-stat-ps {
+  background-color: #58e810;
 }
 
-.bar-stat-att{
-    background-color: #EACA2F; 
+.bar-stat-att {
+  background-color: #eaca2f;
 }
 
-.bar-stat-dif{
-    background-color: #E5721D; 
+.bar-stat-dif {
+  background-color: #e5721d;
 }
 
-.bar-stat-attsp{
-    background-color: #26BAE0; 
+.bar-stat-attsp {
+  background-color: #26bae0;
 }
 
-.bar-stat-difsp{
-    background-color: #4C6CD4; 
+.bar-stat-difsp {
+  background-color: #4c6cd4;
 }
 
-.bar-stat-vel{
-    background-color: #D425CE; 
+.bar-stat-vel {
+  background-color: #d425ce;
+}
+
+.bar-stat-potenza {
+  background-color: #e5721d;
+}
+
+.bar-stat-precisione {
+  background-color: #26bae0;
 }

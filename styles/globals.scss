@@ -110,3 +110,50 @@ body {
   align-items: center;
   font-weight: bold;
 }
+
+.pokedex-card.card-deck {
+  flex-flow: row wrap;
+  justify-content: center;
+}
+
+
+.pokedex-card {
+  .number {
+    color: gray;
+    text-align: left;
+  }
+
+  .card {
+    background-color: white;
+    height: 182px;
+    width: 182px;
+    justify-content: center;
+  }
+
+  .card:hover {
+    background-color: lightgray;
+    height: 182px;
+    width: 182px;
+    justify-content: center;
+  }
+
+  .transparent > .card  {
+    background-color: rgba(255, 255, 255, 0.7);
+  }
+
+  .transparent > .card:hover  {
+    background-color: white;
+  }
+
+  .card-title {
+    font-size: 17px;
+  }
+
+  .card-body {
+    text-align: center;
+  }
+
+  .card-link:hover {
+    text-decoration: none;
+  }
+}

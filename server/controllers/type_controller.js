@@ -14,7 +14,7 @@ const ListTypes = (req, res) => {
 };
 
 const readType = (req, res) => {
-  Type.find({nome: req.params.name})
+  Type.find({tipo: req.params.name})
     .then((data) => {
       res.status(200).json(data);
     })

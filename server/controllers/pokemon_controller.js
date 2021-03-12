@@ -14,7 +14,7 @@ const ListPokes = (req, res) => {
 };
 
 const readPoke = (req, res) => {
-  Pokemon.find({nome: req.params.nome})
+  Pokemon.find({nome: req.params.name})
     .then((data) => {
       res.status(200).json(data);
     })

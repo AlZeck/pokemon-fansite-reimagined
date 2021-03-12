@@ -1,6 +1,5 @@
 import Head from "next/head";
 import Link from "next/link";
-// import styles from '../styles/Home.module.css'
 import NavBarPk from "../components/navbarpk";
 import { Container, Carousel, CardDeck, Card } from "react-bootstrap";
 

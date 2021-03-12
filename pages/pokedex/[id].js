@@ -1,10 +1,8 @@
 import Head from "next/head";
-import Image from "next/image";
 import NavBarPk from "../../components/navbarpk";
 import { BtnTipo, Stats, PokeCard, VociPokedex, colors } from "../../components/pokemon";
 import {
   Container,
-  CardDeck,
   Card,
   Row,
   Col,
@@ -85,7 +83,7 @@ export default function Pokemon({ pokemon }) {
           <Col>
             <ButtonToolbar className="justify-content-between">
               <div role="group">
-                <h3> {capitalize(pokemon.nome)} </h3>
+                <h2> {capitalize(pokemon.nome)} </h2>
               </div>
               <ButtonGroup>
                 <BtnTipo tipo={pokemon.tipo1} />
@@ -105,17 +103,17 @@ export default function Pokemon({ pokemon }) {
         <Card className="mt-4">
           <Card.Body>
             <Card.Title> Mosse </Card.Title>
-            <CardDeck>
+            <div className="d-flex justify-content-center flex-row flex-wrap">
               {pokemon.mosse.map(move => (
-                <div className="mb-4">
-                  <a className={`card btn btn-tipo ${move.tipo} btn-move`}
+                <div className="mx-2 mb-4">
+                  <a className={`btn btn-tipo ${move.tipo} btn-move`}
                     href={`/movedex/${move.nome}`}
                   >
                     {capitalize(move.nome)}
                   </a>
                 </div> 
               ))}
-            </CardDeck>
+            </div>
           </Card.Body>
         </Card>
       </Container>

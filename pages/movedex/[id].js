@@ -82,7 +82,7 @@ export default function move({ move }) {
           <Col className="mb-4">
             <ButtonToolbar className="justify-content-between">
               <div className="mb-4" role="group">
-                <h3> {capitalize(move.nome)} </h3>
+                <h2> {capitalize(move.nome)} </h2>
               </div>
               <ButtonGroup className="mb-4">
                 <BtnTipo tipo={move.tipo} />
@@ -106,11 +106,11 @@ export default function move({ move }) {
         <Card>
           <Card.Body>
             <Card.Title> Pokemons </Card.Title>
-            <CardDeck className="pokedex-card">
+            <div className="d-flex justify-content-center flex-row flex-wrap pokedex-card">
               {move.pokemons.map((pokemon) => (
                 <PokemonsDex pokemon={pokemon} transparent={false} />
               ))}
-            </CardDeck>
+            </div>
           </Card.Body>
         </Card>
       </Container>

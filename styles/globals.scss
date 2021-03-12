@@ -1,4 +1,4 @@
-$border-radius: 5px !default;
+$border-radius: 8px !default;
 @import "bootstrap/scss/bootstrap.scss";
 
 $blur: blur(15px);
@@ -20,12 +20,6 @@ body {
   border-radius: $border-radius;
 }
 
-/* @media (min-width: 1600px) {
-  .container {
-    max-width: 1500px;
-  }
-} */
-
 .carousel-item img {
   border-radius: $border-radius;
 }
@@ -39,9 +33,9 @@ body {
 
 .btn-tipo {
   width: 120px;
+  border: 1px solid rgba(0, 0, 0, 0.125);
 }
 
-@import "tipi.scss";
 
 @import "stat.scss";
 
@@ -111,7 +105,7 @@ body {
   font-weight: bold;
 }
 
-.pokedex-card.card-deck {
+.pokedex-card.card-deck, .typedex-card.card-deck {
   flex-flow: row wrap;
   justify-content: center;
 }
@@ -153,7 +147,43 @@ body {
     text-align: center;
   }
 
-  .card-link:hover {
+  a:hover {
     text-decoration: none;
   }
 }
+
+.typedex-card {
+  .card {
+    background-color: white;
+    color: black;
+    height: 182px;
+    width: 182px;
+    justify-content: center;
+  }
+
+  .card:hover {
+    height: 182px;
+    width: 182px;
+    justify-content: center;
+  }
+
+  .transparent > .card  {
+    background-color: rgba(255, 255, 255, 0.7);
+  }
+
+
+  .card-title {
+    font-size: 17px;
+  }
+
+  .card-body {
+    text-align: center;
+  }
+
+  a:hover {
+    text-decoration: none;
+  }
+}
+
+
+@import "tipi.scss";

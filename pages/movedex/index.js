@@ -2,7 +2,6 @@ import Head from "next/head";
 import Image from "next/image";
 import NavBarPk from "../../components/navbarpk";
 import { Container, CardDeck, Card } from "react-bootstrap";
-import Style from "../../styles/Pokedex.module.css";
 import { connectToDatabase } from "../../util/mongodb";
 import { capitalize } from "../../util/stringUtils";
 
@@ -29,14 +28,14 @@ export default function Movedex({moves}) {
       <NavBarPk />
 
       <Container className="my-4 p-4">
-        <h3>Movedex</h3>
-        <CardDeck className={Style.cardDeck}>
+        <h2>Movedex</h2>
+        <div className="d-flex justify-content-center flex-row flex-wrap pokedex-card">
           {moves.map((move) => (
-            <div className="mb-4">
-              <a href={`/movedex/${move.nome}`} className={Style.cardLink}>
-                <Card className={Style.card}>
-                  <Card.Body className={Style.cardBody}>
-                    <Card.Title className={Style.cardTitle}>
+            <div className="mx-2 mb-4">
+              <a href={`/movedex/${move.nome}`} className="pokedex-card transparent">
+                <Card>
+                  <Card.Body>
+                    <Card.Title>
                       {` ${capitalize(move.nome)} `}
                     </Card.Title>
                     <Image
@@ -50,7 +49,7 @@ export default function Movedex({moves}) {
               </a>
             </div>
           ))}
-        </CardDeck>
+        </div>
       </Container>
     </>
   );

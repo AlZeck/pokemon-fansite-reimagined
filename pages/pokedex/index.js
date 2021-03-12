@@ -3,7 +3,7 @@ import Image from "next/image";
 import NavBarPk from "../../components/navbarpk";
 import { Container, CardDeck } from "react-bootstrap";
 import { connectToDatabase } from "../../util/mongodb";
-
+import { PokemonsDex } from "../../components/pokemon"
 
 export async function getStaticProps(context) {
   const { db } = await connectToDatabase();
@@ -28,12 +28,12 @@ export default function Pokedex({ pokemons }) {
       <NavBarPk />
 
       <Container className="my-4 p-4">
-        <h3>Pokedex</h3>
-        <CardDeck className="pokedex-card">
+        <h2>Pokedex</h2>
+        <div className="d-flex justify-content-center flex-row flex-wrap pokedex-card">
           {pokemons.map((pokemon) => (
             <PokemonsDex pokemon={pokemon} transparent={true} />
           ))}
-        </CardDeck>
+        </div>
       </Container>
     </>
   );

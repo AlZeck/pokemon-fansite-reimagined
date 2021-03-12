@@ -156,7 +156,7 @@ const colors = {
 
 function PokemonsDex(props) {
   return (
-    <div className="mb-4">
+    <div className="mx-2 mb-4">
       <a
         href={`/pokedex/${props.pokemon.nome}`}
         className={`pokedex-card ${props.transparent ? "transparent" : ""}`}

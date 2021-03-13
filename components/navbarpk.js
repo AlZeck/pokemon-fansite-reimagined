@@ -39,19 +39,21 @@ export default function NavBarPk(props) {
       </Navbar.Brand>
       <Navbar.Toggle aria-controls="basic-navbar-nav" />
       <Navbar.Collapse id="basic-navbar-nav">
-        <Nav>
-          <Nav.Item>
-            <a href="/battle" className="btn btn-outline-primary btn-block">
-              <div className="d-flex align-content-center">
-                <Image
-                  src="/assets/img/navbar/go-battle.png"
-                  height={30}
-                  width={149}
-                />
-              </div>
-            </a>
-          </Nav.Item>
-        </Nav>
+        {props.user && (
+          <Nav>
+            <Nav.Item>
+              <a href="/battle" className="btn btn-outline-primary btn-block">
+                <div className="d-flex align-content-center">
+                  <Image
+                    src="/assets/img/navbar/go-battle.png"
+                    height={30}
+                    width={149}
+                  />
+                </div>
+              </a>
+            </Nav.Item>
+          </Nav>
+        )}
         <Nav className="ml-auto">
           <Form inline>
             <InputGroup>
@@ -83,9 +85,17 @@ export default function NavBarPk(props) {
               <Dropdown.Item href="/movedex">Movedex</Dropdown.Item>
               <Dropdown.Item href="/typedex">Typedex</Dropdown.Item>
               <Dropdown.Divider />
-              <Dropdown.Item href="#action/3.4">Sign Up</Dropdown.Item>
-              <Dropdown.Item href="#action/3.4">Log In</Dropdown.Item>
-              <Dropdown.Item href="#action/3.4">Log Out</Dropdown.Item>
+              {!props.user && (
+                <>
+                  <Dropdown.Item href="/signup">Sign Up</Dropdown.Item>
+                  <Dropdown.Item href="/login">Log In</Dropdown.Item>
+                </>
+              )}
+              {props.user && (
+                <>
+                  <Dropdown.Item href="/logout">Log Out</Dropdown.Item>
+                </>
+              )}
             </Dropdown.Menu>
           </Dropdown>
         </Nav>

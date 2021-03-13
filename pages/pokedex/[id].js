@@ -54,7 +54,7 @@ export async function getStaticProps({ params }) {
   };
 }
 
-export default function Pokemon({ pokemon }) {
+export default function Pokemon({ user, pokemon }) {
   return (
     <>
       <Head>
@@ -76,7 +76,7 @@ export default function Pokemon({ pokemon }) {
           }
         `}
       </style>
-      <NavBarPk />
+      <NavBarPk user={user} />
 
       <Container className="my-4 p-4">
         <Row>

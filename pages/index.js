@@ -3,13 +3,13 @@ import Link from "next/link";
 import NavBarPk from "../components/navbarpk";
 import { Container, Carousel, CardDeck, Card } from "react-bootstrap";
 
-export default function Home() {
+export default function Home({user}) {
   return (
     <>
       <Head>
         <title>PokemonFanSite</title>
       </Head>
-      <NavBarPk />
+      <NavBarPk user={user} />
 
       <Container className="my-4 p-4">
         {/* Descrizione */}

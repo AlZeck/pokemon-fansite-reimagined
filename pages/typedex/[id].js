@@ -45,7 +45,7 @@ export async function getStaticProps({ params }) {
   };
 }
 
-export default function type({ type }) {
+export default function type({ user, type }) {
   return (
     <>
       <Head>
@@ -68,7 +68,7 @@ export default function type({ type }) {
           }
         `}
       </style>
-      <NavBarPk />
+      <NavBarPk user={user} />
 
       <Container className="my-4 p-4">
         <Media className="mb-4">

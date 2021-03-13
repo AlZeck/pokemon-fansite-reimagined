@@ -19,13 +19,13 @@ export async function getStaticProps(context) {
   };
 }
 
-export default function Pokedex({ pokemons }) {
+export default function Pokedex({ user, pokemons }) {
   return (
     <>
       <Head>
         <title>PokemonFanSite - Pokedex</title>
       </Head>
-      <NavBarPk />
+      <NavBarPk user={user} />
 
       <Container className="my-4 p-4">
         <h2>Pokedex</h2>

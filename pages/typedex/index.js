@@ -19,25 +19,26 @@ export async function getStaticProps(context) {
   };
 }
 
-export default function Typedex({types}) {
+export default function Typedex({ user, types }) {
   return (
     <>
       <Head>
         <title>PokemonFanSite - Typedex</title>
       </Head>
-      <NavBarPk />
+      <NavBarPk user={user} />
 
       <Container className="my-4 p-4">
         <h2>Typedex</h2>
         <div className="d-flex justify-content-center flex-row flex-wrap typedex-card">
           {types.map((type) => (
             <div className="mx-2 mb-4">
-              <a href={`/typedex/${type.tipo}`} className="typedex-card transparent">
+              <a
+                href={`/typedex/${type.tipo}`}
+                className="typedex-card transparent"
+              >
                 <Card className={type.tipo}>
                   <Card.Body>
-                    <Card.Title>
-                      {` ${capitalize(type.tipo)} `}
-                    </Card.Title>
+                    <Card.Title>{` ${capitalize(type.tipo)} `}</Card.Title>
                     <Image
                       src={`/assets/img/typedex/${type.tipo}.png`}
                       alt={type.tipo}

@@ -20,6 +20,11 @@ body {
   border-radius: $border-radius;
 }
 
+.transparent-card {
+  background-color: rgba(255, 255, 255, 0.7);
+  backdrop-filter: $blur;
+}
+
 .carousel-item img {
   border-radius: $border-radius;
 }
@@ -36,6 +41,9 @@ body {
   border: 1px solid rgba(0, 0, 0, 0.125);
 }
 
+.btn {
+  border-radius: $border-radius;
+}
 
 @import "stat.scss";
 
@@ -140,7 +148,7 @@ body {
   }
 
   .card-title {
-    font-size: 17px;
+    font-size: 16px;
   }
 
   .card-body {

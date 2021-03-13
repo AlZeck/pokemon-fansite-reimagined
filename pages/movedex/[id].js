@@ -52,7 +52,7 @@ export async function getStaticProps({ params }) {
   };
 }
 
-export default function move({ move }) {
+export default function move({user, move }) {
   return (
     <>
       <Head>
@@ -75,7 +75,8 @@ export default function move({ move }) {
           }
         `}
       </style>
-      <NavBarPk />
+      
+      <NavBarPk user={user} />
 
       <Container className="my-4 p-4">
         <Row>

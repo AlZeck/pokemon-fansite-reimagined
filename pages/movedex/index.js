@@ -19,13 +19,13 @@ export async function getStaticProps(context) {
   };
 }
 
-export default function Movedex({moves}) {
+export default function Movedex({user, moves}) {
   return (
     <>
       <Head>
         <title>PokemonFanSite - Movedex</title>
       </Head>
-      <NavBarPk />
+      <NavBarPk user={user} />
 
       <Container className="my-4 p-4">
         <h2>Movedex</h2>

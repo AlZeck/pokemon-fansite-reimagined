@@ -5,6 +5,7 @@
   "scripts": {
     "dev-next": "next dev",
     "dev": "nodemon server/main.js",
+    "build": "next build",
     "start": "node server/main.js",
     "format": "prettier **/*.js --write"
   },

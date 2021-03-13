@@ -78,7 +78,7 @@ const logInUser = (req, res) => {
       if (err) {
         return res.status(500).json({ status: "error", info: err });
       }
-      return res.redirect("/");
+      return res.status(201).json({ status: "success", info: "success" });
     });
   })(req, res);
 };

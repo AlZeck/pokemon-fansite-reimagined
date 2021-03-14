@@ -30,8 +30,8 @@ export default function Typedex({ user, types }) {
       <Container className="my-4 p-4">
         <h2>Typedex</h2>
         <div className="d-flex justify-content-center flex-row flex-wrap typedex-card">
-          {types.map((type) => (
-            <div className="mx-2 mb-4">
+          {types.map((type,i) => (
+            <div key={i} className="mx-2 mb-4">
               <a
                 href={`/typedex/${type.tipo}`}
                 className="typedex-card transparent"

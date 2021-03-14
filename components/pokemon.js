@@ -22,11 +22,11 @@ function Stats(props) {
   return (
     <Card.Body>
       <Card.Title> Statistiche </Card.Title>
-      {stats.map((stat) => {
+      {stats.map((stat,i) => {
         const val = props.info[stat];
         const per = (val * 100) / max;
         return (
-          <Row className="py-2">
+          <Row key={i} className="py-2">
             <Col sm={dim} className="stat-label">
               {capitalize(stat)}
             </Col>
@@ -116,9 +116,9 @@ function VociPokedex(props) {
       <Tab.Container defaultActiveKey="Voce1">
         <Card.Header>
           <Card.Title> Voci pokedex </Card.Title>
-          <Nav variant="pills" cardHeaderBsPrefix>
+          <Nav variant="pills" >
             {props.voci.map((_, c) => (
-              <Nav.Item>
+              <Nav.Item key={c + 1}>
                 <Nav.Link eventKey={`Voce${c + 1}`}>{`Voce ${c + 1}`}</Nav.Link>
               </Nav.Item>
             ))}
@@ -127,11 +127,12 @@ function VociPokedex(props) {
         <Card.Body>
           <Tab.Content>
             {props.voci.map((v, c) => (
-              <Tab.Pane eventKey={`Voce${c + 1}`}>
+              <Tab.Pane key={c + 1} eventKey={`Voce${c + 1}`}>
                 <div className="voce-text">{v.voce}</div>
                 <div className="row games-card-deck">
-                  {v.giochi.map((game) => (
+                  {v.giochi.map((game,i) => (
                     <img
+                      key={i}
                       className="card mb-4"
                       src={`/assets/img/boxart/${game}.png`}
                       alt={`${game}_boxart`}
@@ -202,8 +203,9 @@ function EfficacyTypes(props) {
     <>
       <strong> {props.title} </strong>
       <CardDeck className="justify-content-center">
-        {props.types.map((type) => (
+        {props.types.map((type,i) => (
           <a
+            key={i}
             className={`btn btn-tipo ${type} btn-move m-2`}
             href={`/typedex/${type}`}
           >

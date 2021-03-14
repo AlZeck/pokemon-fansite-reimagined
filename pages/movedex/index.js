@@ -63,8 +63,8 @@ export default class Movedex extends React.Component {
         <Container className="my-4 p-4">
           <h2>Movedex</h2>
           <div className="d-flex justify-content-center flex-row flex-wrap pokedex-card">
-            {moves.map((move) => (
-              <div className="mx-2 mb-4">
+            {moves.map((move,i) => (
+              <div key={i} className="mx-2 mb-4">
                 <a
                   href={`/movedex/${move.nome}`}
                   className="pokedex-card transparent"

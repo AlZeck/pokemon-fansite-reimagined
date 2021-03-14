@@ -109,7 +109,7 @@ export default function move({user, move }) {
             <Card.Title> Pokemons </Card.Title>
             <div className="d-flex justify-content-center flex-row flex-wrap pokedex-card">
               {move.pokemons.map((pokemon) => (
-                <PokemonsDex pokemon={pokemon} transparent={false} />
+                <PokemonsDex key={pokemon.id} pokemon={pokemon} transparent={false} />
               ))}
             </div>
           </Card.Body>

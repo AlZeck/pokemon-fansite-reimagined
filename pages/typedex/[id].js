@@ -96,7 +96,7 @@ export default function type({ user, type }) {
             <Card.Title> Pokemons </Card.Title>
             <div className="d-flex justify-content-center flex-row flex-wrap pokedex-card">
               {type.pokemons.map((pokemon) => (
-                <PokemonsDex pokemon={pokemon} transparent={false} />
+                <PokemonsDex key={pokemon.id} pokemon={pokemon} transparent={false} />
               ))}
             </div>
           </Card.Body>
@@ -106,8 +106,8 @@ export default function type({ user, type }) {
           <Card.Body>
             <Card.Title>Mosse</Card.Title>
             <div className="d-flex justify-content-center flex-row flex-wrap">
-              {type.mosse.map((move) => (
-                <div className="mx-2 mb-4">
+              {type.mosse.map((move,i) => (
+                <div key={i} className="mx-2 mb-4">
                   <a
                     className={`btn btn-tipo ${type.tipo} btn-move`}
                     href={`/movedex/${move.nome}`}

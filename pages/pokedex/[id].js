@@ -104,8 +104,8 @@ export default function Pokemon({ user, pokemon }) {
           <Card.Body>
             <Card.Title> Mosse </Card.Title>
             <div className="d-flex justify-content-center flex-row flex-wrap">
-              {pokemon.mosse.map(move => (
-                <div className="mx-2 mb-4">
+              {pokemon.mosse.map((move,i) => (
+                <div key={i} className="mx-2 mb-4">
                   <a className={`btn btn-tipo ${move.tipo} btn-move`}
                     href={`/movedex/${move.nome}`}
                   >

@@ -95,7 +95,7 @@ export default function Pokemon({ user, pokemon }) {
               <Stats info={pokemon} type="Pokemon" />
             </Card>
           </Col>
-          <Col sm={4}>
+          <Col className="mb-4" sm={4}>
             <PokeCard pokemon={pokemon.nome} />
           </Col>
         </Row>

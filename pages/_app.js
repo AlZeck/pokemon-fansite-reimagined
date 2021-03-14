@@ -27,6 +27,7 @@ class MyApp extends App {
     return (
       <>
         <Component {...pageProps} />
+        <br />
       </>
     );
   }

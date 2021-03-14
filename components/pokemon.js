@@ -1,5 +1,13 @@
 import Image from "next/image";
-import { CardDeck, Card, Row, Col, Nav, Tab } from "react-bootstrap";
+import {
+  CardDeck,
+  Card,
+  Row,
+  Col,
+  Nav,
+  Tab,
+  Pagination,
+} from "react-bootstrap";
 import { capitalize } from "../util/stringUtils";
 
 function Stats(props) {
@@ -44,17 +52,16 @@ function Stats(props) {
 }
 
 function BtnTipo(props) {
-  if (props.notClickable){
+  if (props.notClickable) {
     return (
       <div
         className={`btn btn-tipo ${props.tipo}`}
-        style={{cursor: "default"}}
+        style={{ cursor: "default" }}
       >
         {capitalize(props.tipo)}
       </div>
     );
-  }
-  else if (props.tipo !== "")
+  } else if (props.tipo !== "")
     return (
       <a
         className={`btn btn-tipo ${props.tipo}`}
@@ -122,10 +129,10 @@ function VociPokedex(props) {
             {props.voci.map((v, c) => (
               <Tab.Pane eventKey={`Voce${c + 1}`}>
                 <div className="voce-text">{v.voce}</div>
-                <div class="row games-card-deck">
+                <div className="row games-card-deck">
                   {v.giochi.map((game) => (
                     <img
-                      class="card mb-4"
+                      className="card mb-4"
                       src={`/assets/img/boxart/${game}.png`}
                       alt={`${game}_boxart`}
                     />
@@ -225,4 +232,71 @@ function Efficacy(props) {
   );
 }
 
-export { BtnTipo, Stats, PokeCard, VociPokedex, colors, PokemonsDex, Efficacy };
+function MiddlePagination({ last, current, handler }) {
+  if (current < 4) {
+    return (
+      <>
+        {Array.from({ length: 4 }, (x, i) => (
+          <Pagination.Item
+            key={i + 1}
+            active={i + 1 === current}
+            onClick={() => {
+              handler(i + 1);
+            }}
+          >
+            {i + 1}
+          </Pagination.Item>
+        ))}
+
+        <Pagination.Ellipsis disabled />
+      </>
+    );
+  } else if (current > last - 3) {
+    return (
+      <>
+        <Pagination.Ellipsis disabled />
+        {Array.from({ length: 4 }, (x, i) => (
+          <Pagination.Item
+            key={last - i}
+            active={last - i === current}
+            onClick={() => {
+              handler(last - i);
+            }}
+          >
+            {last - i}
+          </Pagination.Item>
+        )).reverse()}
+      </>
+    );
+  } else {
+    return (
+      <>
+        <Pagination.Ellipsis disabled />
+        {Array.from([current - 1, current, current + 1], (i, x) => (
+          <Pagination.Item
+            key={i}
+            active={i === current}
+            onClick={() => {
+              handler(i);
+            }}
+          >
+            {i}
+          </Pagination.Item>
+        ))}
+
+        <Pagination.Ellipsis disabled />
+      </>
+    );
+  }
+}
+
+export {
+  BtnTipo,
+  Stats,
+  PokeCard,
+  VociPokedex,
+  colors,
+  PokemonsDex,
+  Efficacy,
+  MiddlePagination,
+};

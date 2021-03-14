@@ -87,7 +87,7 @@ export default function move({user, move }) {
               </div>
               <ButtonGroup className="mb-4">
                 <BtnTipo tipo={move.tipo} />
-                <BtnTipo tipo={move.categoria} />
+                <BtnTipo tipo={move.categoria} notClickable/>
               </ButtonGroup>
             </ButtonToolbar>
             <Card>

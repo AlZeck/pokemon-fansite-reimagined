@@ -44,7 +44,17 @@ function Stats(props) {
 }
 
 function BtnTipo(props) {
-  if (props.tipo !== "")
+  if (props.notClickable){
+    return (
+      <div
+        className={`btn btn-tipo ${props.tipo}`}
+        style={{cursor: "default"}}
+      >
+        {capitalize(props.tipo)}
+      </div>
+    );
+  }
+  else if (props.tipo !== "")
     return (
       <a
         className={`btn btn-tipo ${props.tipo}`}

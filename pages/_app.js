@@ -24,12 +24,7 @@ class MyApp extends App {
     const { Component, pageProps } = this.props;
 
     const props = { ...pageProps, user: this.state.user };
-    return (
-      <>
-        <Component {...pageProps} />
-        <br />
-      </>
-    );
+    return <Component {...pageProps} />;
   }
 }
 

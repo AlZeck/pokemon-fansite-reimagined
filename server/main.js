@@ -93,12 +93,15 @@ passport.deserializeUser(function (id, cb) {
       if (!req.isAuthenticated()) return res.redirect("/login");
       next();
     };
-    
+
     server.use("/profile", restrictAccess);
     server.use("/battle/", restrictAccess);
 
     // Api handling
     server.use("/api", require("./routes/api"));
+
+    // Add Wss Server
+    require("./webSockets/webServer")(server);
 
     // Next application handling
     server.all("*", (req, res) => {

@@ -1,0 +1,341 @@
+{
+  "version": "5",
+  "dialect": "pg",
+  "id": "2c8054e4-f616-4007-b1c2-bcea0010c975",
+  "prevId": "00000000-0000-0000-0000-000000000000",
+  "tables": {
+    "impara": {
+      "name": "impara",
+      "schema": "",
+      "columns": {
+        "pokemon": {
+          "name": "pokemon",
+          "type": "numeric",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "mossa": {
+          "name": "mossa",
+          "type": "numeric",
+          "primaryKey": false,
+          "notNull": true
+        }
+      },
+      "indexes": {},
+      "foreignKeys": {
+        "impara_pokemon_pokemon_id_fk": {
+          "name": "impara_pokemon_pokemon_id_fk",
+          "tableFrom": "impara",
+          "tableTo": "pokemon",
+          "columnsFrom": [
+            "pokemon"
+          ],
+          "columnsTo": [
+            "id"
+          ],
+          "onDelete": "no action",
+          "onUpdate": "no action"
+        },
+        "impara_mossa_mossa_id_fk": {
+          "name": "impara_mossa_mossa_id_fk",
+          "tableFrom": "impara",
+          "tableTo": "mossa",
+          "columnsFrom": [
+            "mossa"
+          ],
+          "columnsTo": [
+            "id"
+          ],
+          "onDelete": "no action",
+          "onUpdate": "no action"
+        }
+      },
+      "compositePrimaryKeys": {
+        "impara_pokemon_mossa": {
+          "name": "impara_pokemon_mossa",
+          "columns": [
+            "pokemon",
+            "mossa"
+          ]
+        }
+      },
+      "uniqueConstraints": {}
+    },
+    "mossa": {
+      "name": "mossa",
+      "schema": "",
+      "columns": {
+        "id": {
+          "name": "id",
+          "type": "numeric",
+          "primaryKey": true,
+          "notNull": true
+        },
+        "nome": {
+          "name": "nome",
+          "type": "varchar(20)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "tipo": {
+          "name": "tipo",
+          "type": "varchar(12)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "categoria": {
+          "name": "categoria",
+          "type": "varchar(10)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "potenza": {
+          "name": "potenza",
+          "type": "numeric",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "precisione": {
+          "name": "precisione",
+          "type": "numeric",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "descrizione": {
+          "name": "descrizione",
+          "type": "varchar(200)",
+          "primaryKey": false,
+          "notNull": true
+        }
+      },
+      "indexes": {},
+      "foreignKeys": {
+        "mossa_tipo_tipo_nome_fk": {
+          "name": "mossa_tipo_tipo_nome_fk",
+          "tableFrom": "mossa",
+          "tableTo": "tipo",
+          "columnsFrom": [
+            "tipo"
+          ],
+          "columnsTo": [
+            "nome"
+          ],
+          "onDelete": "no action",
+          "onUpdate": "no action"
+        }
+      },
+      "compositePrimaryKeys": {},
+      "uniqueConstraints": {}
+    },
+    "pokemon": {
+      "name": "pokemon",
+      "schema": "",
+      "columns": {
+        "id": {
+          "name": "id",
+          "type": "numeric",
+          "primaryKey": true,
+          "notNull": true
+        },
+        "nome": {
+          "name": "nome",
+          "type": "varchar(20)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "tipo1": {
+          "name": "tipo1",
+          "type": "varchar(12)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "tipo2": {
+          "name": "tipo2",
+          "type": "varchar(12)",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "ps": {
+          "name": "ps",
+          "type": "numeric",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "att": {
+          "name": "att",
+          "type": "numeric",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "dif": {
+          "name": "dif",
+          "type": "numeric",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "attsp": {
+          "name": "attsp",
+          "type": "numeric",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "difsp": {
+          "name": "difsp",
+          "type": "numeric",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "vel": {
+          "name": "vel",
+          "type": "numeric",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "uber": {
+          "name": "uber",
+          "type": "boolean",
+          "primaryKey": false,
+          "notNull": true
+        }
+      },
+      "indexes": {},
+      "foreignKeys": {
+        "pokemon_tipo1_tipo_nome_fk": {
+          "name": "pokemon_tipo1_tipo_nome_fk",
+          "tableFrom": "pokemon",
+          "tableTo": "tipo",
+          "columnsFrom": [
+            "tipo1"
+          ],
+          "columnsTo": [
+            "nome"
+          ],
+          "onDelete": "no action",
+          "onUpdate": "no action"
+        },
+        "pokemon_tipo2_tipo_nome_fk": {
+          "name": "pokemon_tipo2_tipo_nome_fk",
+          "tableFrom": "pokemon",
+          "tableTo": "tipo",
+          "columnsFrom": [
+            "tipo2"
+          ],
+          "columnsTo": [
+            "nome"
+          ],
+          "onDelete": "no action",
+          "onUpdate": "no action"
+        }
+      },
+      "compositePrimaryKeys": {},
+      "uniqueConstraints": {}
+    },
+    "tipo": {
+      "name": "tipo",
+      "schema": "",
+      "columns": {
+        "nome": {
+          "name": "nome",
+          "type": "varchar(20)",
+          "primaryKey": true,
+          "notNull": true
+        },
+        "efficacia": {
+          "name": "efficacia",
+          "type": "jsonb",
+          "primaryKey": false,
+          "notNull": true,
+          "default": "'{\"offensivo\":{\"superefficace\":[],\"pocoefficace\":[],\"inefficace\":[]},\"diffensivo\":{\"superefficace\":[],\"pocoefficace\":[],\"inefficace\":[]}}'::jsonb"
+        }
+      },
+      "indexes": {},
+      "foreignKeys": {},
+      "compositePrimaryKeys": {},
+      "uniqueConstraints": {}
+    },
+    "utente": {
+      "name": "utente",
+      "schema": "",
+      "columns": {
+        "username": {
+          "name": "username",
+          "type": "varchar(22)",
+          "primaryKey": true,
+          "notNull": true
+        },
+        "password": {
+          "name": "password",
+          "type": "varchar(100)",
+          "primaryKey": false,
+          "notNull": false
+        }
+      },
+      "indexes": {},
+      "foreignKeys": {},
+      "compositePrimaryKeys": {},
+      "uniqueConstraints": {}
+    }
+  },
+  "enums": {
+    "aal_level": {
+      "name": "aal_level",
+      "values": {
+        "aal3": "aal3",
+        "aal2": "aal2",
+        "aal1": "aal1"
+      }
+    },
+    "code_challenge_method": {
+      "name": "code_challenge_method",
+      "values": {
+        "plain": "plain",
+        "s256": "s256"
+      }
+    },
+    "factor_status": {
+      "name": "factor_status",
+      "values": {
+        "verified": "verified",
+        "unverified": "unverified"
+      }
+    },
+    "factor_type": {
+      "name": "factor_type",
+      "values": {
+        "webauthn": "webauthn",
+        "totp": "totp"
+      }
+    },
+    "key_status": {
+      "name": "key_status",
+      "values": {
+        "expired": "expired",
+        "invalid": "invalid",
+        "valid": "valid",
+        "default": "default"
+      }
+    },
+    "key_type": {
+      "name": "key_type",
+      "values": {
+        "stream_xchacha20": "stream_xchacha20",
+        "secretstream": "secretstream",
+        "secretbox": "secretbox",
+        "kdf": "kdf",
+        "generichash": "generichash",
+        "shorthash": "shorthash",
+        "auth": "auth",
+        "hmacsha256": "hmacsha256",
+        "hmacsha512": "hmacsha512",
+        "aead-det": "aead-det",
+        "aead-ietf": "aead-ietf"
+      }
+    }
+  },
+  "schemas": {},
+  "_meta": {
+    "schemas": {},
+    "tables": {},
+    "columns": {}
+  }
+}

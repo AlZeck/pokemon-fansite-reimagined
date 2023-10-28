@@ -5,7 +5,42 @@ import {
   numeric,
   boolean,
   primaryKey,
+  jsonb,
 } from "drizzle-orm/pg-core";
+
+const types = [
+  "acciaio",
+  "acqua",
+  "buio",
+  "coleottero",
+  "drago",
+  "elettro",
+  "erba",
+  "folletto",
+  "fuoco",
+  "ghiaccio",
+  "lotta",
+  "normale",
+  "psico",
+  "roccia",
+  "spettro",
+  "terra",
+  "veleno",
+  "volante",
+] as const;
+
+export type Type = (typeof types)[number];
+
+type EfficacyType = {
+  superefficace: Type[];
+  poco_efficace: Type[];
+  inefficace: Type[];
+};
+
+type Efficacy = {
+  offensivo: EfficacyType;
+  diffensivo: EfficacyType;
+};
 
 export const keyStatus = pgEnum("key_status", [
   "expired",
@@ -35,7 +70,22 @@ export const codeChallengeMethod = pgEnum("code_challenge_method", [
 ]);
 
 export const tipo = pgTable("tipo", {
-  nome: varchar("nome", { length: 20 }).primaryKey().notNull(),
+  nome: varchar("nome", { length: 20, enum: types }).primaryKey().notNull(),
+  efficacia: jsonb("efficacia")
+    .$type<Efficacy>()
+    .default({
+      offensivo: {
+        superefficace: [],
+        poco_efficace: [],
+        inefficace: [],
+      },
+      diffensivo: {
+        superefficace: [],
+        poco_efficace: [],
+        inefficace: [],
+      },
+    })
+    .notNull(),
 });
 
 export const pokemon = pgTable("pokemon", {

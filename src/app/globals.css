@@ -1,0 +1,555 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 100% / 70%;
+    --foreground: 20 14.3% 4.1%;
+    --card: 0 0% 100%;
+    --card-foreground: 20 14.3% 4.1%;
+    --popover: 0 0% 100% / 70%;
+    --popover-foreground: 20 14.3% 4.1%;
+    --primary: 47.9 95.8% 53.1%;
+    --primary-foreground: 26 83.3% 14.1%;
+    --secondary: 60 4.8% 95.9%;
+    --secondary-foreground: 24 9.8% 10%;
+    --muted: 60 4.8% 95.9%;
+    --muted-foreground: 25 5.3% 44.7%;
+    --accent: 60 4.8% 95.9%;
+    --accent-foreground: 24 9.8% 10%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 60 9.1% 97.8%;
+    --border: 20 5.9% 90%;
+    --input: 20 5.9% 90%;
+    --ring: 20 14.3% 4.1%;
+    --radius: 0.5rem;
+  }
+
+  .dark {
+    --background: 20 14.3% 4.1%;
+    --foreground: 60 9.1% 97.8%;
+    --card: 20 14.3% 4.1%;
+    --card-foreground: 60 9.1% 97.8%;
+    --popover: 20 14.3% 4.1%;
+    --popover-foreground: 60 9.1% 97.8%;
+    --primary: 47.9 95.8% 53.1%;
+    --primary-foreground: 26 83.3% 14.1%;
+    --secondary: 12 6.5% 15.1%;
+    --secondary-foreground: 60 9.1% 97.8%;
+    --muted: 12 6.5% 15.1%;
+    --muted-foreground: 24 5.4% 63.9%;
+    --accent: 12 6.5% 15.1%;
+    --accent-foreground: 60 9.1% 97.8%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 60 9.1% 97.8%;
+    --border: 12 6.5% 15.1%;
+    --input: 12 6.5% 15.1%;
+    --ring: 35.5 91.7% 32.9%;
+  }
+}
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply text-foreground;
+
+    width: 100%;
+
+    background-image: url(/assets/img/home_page/background.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+  }
+}
+
+@layer components {
+  .stat-label {
+    text-align: center;
+    justify-content: center;
+    font-weight: bold;
+    min-width: 80px;
+    max-width: 120px;
+  }
+
+  .bar-stat-ps {
+    background-color: #58e810;
+  }
+
+  .bar-stat-att {
+    background-color: #eaca2f;
+  }
+
+  .bar-stat-dif {
+    background-color: #e5721d;
+  }
+
+  .bar-stat-attsp {
+    background-color: #26bae0;
+  }
+
+  .bar-stat-difsp {
+    background-color: #4c6cd4;
+  }
+
+  .bar-stat-vel {
+    background-color: #d425ce;
+  }
+
+  .bar-stat-potenza {
+    background-color: #e5721d;
+  }
+
+  .bar-stat-precisione {
+    background-color: #26bae0;
+  }
+
+  .acciaio {
+    color: white;
+    background: #5a8da1;
+  }
+
+  .acciaio:hover:not([disabled]) {
+    background: #1d4c5e;
+    color: #bdd1d9;
+  }
+
+  .acciaio:disabled {
+    background: #bdd1d9;
+    color: #1d4c5e;
+  }
+
+  .acciaio-dark {
+    background: #1d4c5e;
+    color: #bdd1d9;
+  }
+
+  .acqua {
+    color: white;
+    background: #4f90d5;
+  }
+
+  .acqua:hover:not([disabled]) {
+    background: #114983;
+    color: #b4d0ec;
+  }
+
+  .acqua:disabled {
+    background: #b4d0ec;
+    color: #114983;
+  }
+
+  .acqua-dark {
+    background: #114983;
+    color: #b4d0ec;
+  }
+
+  .buio {
+    color: white;
+    background: #5a5365;
+  }
+
+  .buio:hover:not([disabled]) {
+    background: #1e1a25;
+    color: #a29ea7;
+  }
+
+  .buio:disabled {
+    background: #a29ea7;
+    color: #1e1a25;
+  }
+
+  .buio-dark {
+    background: #1e1a25;
+    color: #a29ea7;
+  }
+
+  .coleottero {
+    color: white;
+    background: #91c02e;
+  }
+
+  .coleottero:hover:not([disabled]) {
+    background: #547904;
+    color: #d8f895;
+  }
+
+  .coleottero:disabled {
+    background: #d8f895;
+    color: #547904;
+  }
+
+  .coleottero-dark {
+    background: #547904;
+    color: #d8f895;
+  }
+
+  .drago {
+    color: white;
+    background: #0a6dc2;
+  }
+
+  .drago:hover:not([disabled]) {
+    background: #002b50;
+    color: #7db0dc;
+  }
+
+  .drago:disabled {
+    background: #7db0dc;
+    color: #002b50;
+  }
+
+  .drago-dark {
+    background: #002b50;
+    color: #7db0dc;
+  }
+
+  .elettro {
+    color: white;
+    background: #f4d23c;
+  }
+
+  .elettro:hover:not([disabled]) {
+    background: #917908;
+    color: #faf5af;
+  }
+
+  .elettro:disabled {
+    background: #faf5af;
+    color: #917908;
+  }
+
+  .elettro-dark {
+    background: #917908;
+    color: #faf5af;
+  }
+
+  .erba {
+    color: white;
+    background: #62bb5a;
+  }
+
+  .erba:hover:not([disabled]) {
+    background: #11500a;
+    color: #b1ffa9;
+  }
+
+  .erba:disabled {
+    background: #b1ffa9;
+    color: #11500a;
+  }
+
+  .erba-dark {
+    background: #11500a;
+    color: #b1ffa9;
+  }
+
+  .folletto {
+    color: white;
+    background: #eb8fe6;
+  }
+
+  .folletto:hover:not([disabled]) {
+    background: #a940a3;
+    color: #ffd3fc;
+  }
+
+  .folletto:disabled {
+    background: #ffd3fc;
+    color: #a940a3;
+  }
+
+  .folletto-dark {
+    background: #a940a3;
+    color: #ffd3fc;
+  }
+
+  .fuoco {
+    color: white;
+    background: #fe9c54;
+  }
+
+  .fuoco:hover:not([disabled]) {
+    background: #a74700;
+    color: #ffd2a1;
+  }
+
+  .fuoco:disabled {
+    background: #ffd2a1;
+    color: #a74700;
+  }
+
+  .fuoco-dark {
+    background: #a74700;
+    color: #ffd2a1;
+  }
+
+  .ghiaccio {
+    color: white;
+    background: #73cebf;
+  }
+
+  .ghiaccio:hover:not([disabled]) {
+    background: #187c6a;
+    color: #ccfff6;
+  }
+
+  .ghiaccio:disabled {
+    background: #ccfff6;
+    color: #187c6a;
+  }
+
+  .ghiaccio-dark {
+    background: #187c6a;
+    color: #ccfff6;
+  }
+
+  .lotta {
+    color: white;
+    background: #cd406a;
+  }
+
+  .lotta:hover:not([disabled]) {
+    background: #801334;
+    color: #f488a9;
+  }
+
+  .lotta:disabled {
+    background: #f488a9;
+    color: #801334;
+  }
+
+  .lotta-dark {
+    background: #801334;
+    color: #f488a9;
+  }
+
+  .normale {
+    color: white;
+    background: #9199a1;
+  }
+
+  .normale:hover:not([disabled]) {
+    background: #444b53;
+    color: #dadde0;
+  }
+
+  .normale:disabled {
+    background: #dadde0;
+    color: #444b53;
+  }
+
+  .normale-dark {
+    background: #444b53;
+    color: #dadde0;
+  }
+
+  .ombra {
+    color: white;
+    background: #604e82;
+  }
+
+  .ombra:hover:not([disabled]) {
+    background: #3e3355;
+    color: #8674a8;
+  }
+
+  .ombra:disabled {
+    background: #8674a8;
+    color: #3e3355;
+  }
+
+  .ombra-dark {
+    background: #3e3355;
+    color: #8674a8;
+  }
+
+  .psico {
+    color: white;
+    background: #f67177;
+  }
+
+  .psico:hover:not([disabled]) {
+    background: #a20d14;
+    color: #ffbbbe;
+  }
+
+  .psico:disabled {
+    background: #ffbbbe;
+    color: #a20d14;
+  }
+
+  .psico-dark {
+    background: #a20d14;
+    color: #ffbbbe;
+  }
+
+  .roccia {
+    color: white;
+    background: #c5b78b;
+  }
+
+  .roccia:hover:not([disabled]) {
+    background: #7e6e3f;
+    color: #f1e7c7;
+  }
+
+  .roccia:disabled {
+    background: #f1e7c7;
+    color: #7e6e3f;
+  }
+
+  .roccia-dark {
+    background: #7e6e3f;
+    color: #f1e7c7;
+  }
+
+  .sconosciuto {
+    color: white;
+    background: #68a090;
+  }
+
+  .sconosciuto:hover:not([disabled]) {
+    background: #44685e;
+    color: #9dc1b7;
+  }
+
+  .sconosciuto:disabled {
+    background: #9dc1b7;
+    color: #44685e;
+  }
+
+  .sconosciuto-dark {
+    background: #44685e;
+    color: #9dc1b7;
+  }
+
+  .spettro {
+    color: white;
+    background: #5269ac;
+  }
+
+  .spettro:hover:not([disabled]) {
+    background: #193177;
+    color: #a5b6e7;
+  }
+
+  .spettro:disabled {
+    background: #a5b6e7;
+    color: #193177;
+  }
+
+  .spettro-dark {
+    background: #193177;
+    color: #a5b6e7;
+  }
+
+  .terra {
+    color: white;
+    background: #d87844;
+  }
+
+  .terra:hover:not([disabled]) {
+    background: #9a3e0b;
+    color: #ffbb96;
+  }
+
+  .terra:disabled {
+    background: #ffbb96;
+    color: #9a3e0b;
+  }
+
+  .terra-dark {
+    background: #9a3e0b;
+    color: #ffbb96;
+  }
+
+  .veleno {
+    color: white;
+    background: #a96ac8;
+  }
+
+  .veleno:hover:not([disabled]) {
+    background: #79339d;
+    color: #e0b0f9;
+  }
+
+  .veleno:disabled {
+    background: #e0b0f9;
+    color: #79339d;
+  }
+
+  .veleno-dark {
+    background: #79339d;
+    color: #e0b0f9;
+  }
+
+  .volante {
+    color: white;
+    background: #8ea8de;
+  }
+
+  .volante:hover:not([disabled]) {
+    background: #3b5da2;
+    color: #d6e4ff;
+  }
+
+  .volante:disabled {
+    background: #d6e4ff;
+    color: #3b5da2;
+  }
+
+  .volante-dark {
+    background: #3b5da2;
+    color: #d6e4ff;
+  }
+
+  /** categorie */
+
+  .fisico {
+    color: white;
+    background: #c92112;
+  }
+
+  .fisico:disabled {
+    background: #d96358;
+    color: #82150b;
+  }
+
+  .fisico-dark {
+    background: #82150b;
+    color: #d96358;
+  }
+
+  .speciale {
+    color: white;
+    background: #4f5870;
+  }
+
+  .speciale:disabled {
+    background: #83899a;
+    color: #333948;
+  }
+
+  .speciale-dark {
+    background: #333948;
+    color: #83899a;
+  }
+
+  .stato {
+    color: white;
+    background: #8c888c;
+  }
+
+  .stato:disabled {
+    background: #aeabae;
+    color: #5b585b;
+  }
+
+  .stato-dark {
+    background: #5b585b;
+    color: #aeabae;
+  }
+}
